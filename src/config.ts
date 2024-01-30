@@ -169,6 +169,7 @@ export class Config {
 
     if (config.search) {
       // Search
+      config.plugin.remove('search');
       config.plugin.add({
         id: 'search',
         position: PluginPosition.Header,
