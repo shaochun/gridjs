@@ -178,6 +178,7 @@ export class Config {
 
     if (config.pagination) {
       // Pagination
+      config.plugin.remove('pagination');
       config.plugin.add({
         id: 'pagination',
         position: PluginPosition.Footer,
@@ -188,6 +189,7 @@ export class Config {
     // Additional plugins
     if (config.plugins) {
       config.plugins.forEach((p) => config.plugin.add(p));
+      config.plugins.forEach((p) => {config.plugin.remove(p.id);config.plugin.add(p);});
     }
 
     return config;
