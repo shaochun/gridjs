@@ -1,5 +1,6 @@
 import { useConfig } from '../hooks/useConfig';
-import enUS from './en_US';
+//import enUS from './en_US';
+import hanjiTW from './hanji_TW';
 type MessageFormat = (...args) => string;
 type Message = string | MessageFormat;
 export type Language = { [key: string]: Message | Language };
@@ -10,7 +11,7 @@ export class Translator {
 
   constructor(language?: Language) {
     this._language = language;
-    this._defaultLanguage = enUS;
+    this._defaultLanguage = hanjiTW;
   }
 
   /**
