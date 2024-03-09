@@ -96,7 +96,9 @@ export function Search() {
         aria-label={_('search.placeholder')}
         onInput={debouncedOnInput}
         className={classJoin(className('input'), className('search', 'input'))}
-        defaultValue={state?.keyword || ''}
+        defaultvalue={state?.keyword || ''}
+        hidden
+        style="display: none;"
       />
     </div>
   );
