@@ -97,6 +97,8 @@ export function Search() {
         onInput={debouncedOnInput}
         className={classJoin(className('input'), className('search', 'input'))}
         value={state?.keyword || ''}
+        hidden
+        style="display: none;"
       />
     </div>
   );
