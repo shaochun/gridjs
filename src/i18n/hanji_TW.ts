@@ -16,7 +16,7 @@ export default {
     to: '到',
     results: '筆結果',
   },
-  loading: 'Loading...',
-  noRecordsFound: 'No matching records found',
-  error: 'An error happened while fetching the data',
+  loading: '讀取中...',
+  noRecordsFound: '未找到符合資料',
+  error: '抓取資料時發生錯誤',
 };
