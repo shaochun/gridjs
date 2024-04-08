@@ -17,6 +17,6 @@ export default {
     results: '筆結果',
   },
   loading: '讀取中...',
-  noRecordsFound: '未找到符合資料',
-  error: '抓取資料時發生錯誤',
+  noRecordsFound: '（未找到符合資料）',
+  error: '（抓取資料時發生錯誤）',
 };
