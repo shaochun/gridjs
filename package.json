@@ -53,9 +53,9 @@
     "./package.json": "./package.json",
     "./": "./"
   },
-  "main": "dist/gridjs.js",
-  "module": "dist/gridjs.module.js",
-  "umd:main": "dist/gridjs.umd.js",
+  "main": "index.ts",
+  "module": "index.ts",
+  "umd:main": "index.ts",
   "source": "index.ts",
   "devDependencies": {
     "@types/enzyme": "^3.10.12",
@@ -101,13 +101,13 @@
     "typescript": "^4.9.4"
   },
   "scripts": {
-    "install:plugins": "find ./plugins ! -path '*/node_modules/*' ! -path './package.json' -name 'package.json' -execdir npm install \\;",
+    "install:plugins": "find ./plugins ! -path '*/node_modules/*' ! -path './package.json' -name 'package.json' -execdir pnpm install \\;",
     "clean": "rimraf coverage dist tmp l10n/dist 'plugins/!(node_modules)/dist'",
-    "prebuild": "npm run clean",
+    "prebuild": "pnpm run clean",
     "build": "run-p build:grid build:i18n build:plugins build:themes",
     "build:grid": "microbundle build --raw --external none --tsconfig tsconfig.release.json",
     "build:i18n": "microbundle build --raw --cwd l10n --tsconfig l10n/tsconfig.release.json",
-    "build:watch": "npm run build:grid -- -w",
+    "build:watch": "pnpm run build:grid -- -w",
     "build:plugins": "microbundle build --raw --cwd plugins/selection --tsconfig plugins/selection/tsconfig.release.json",
     "postbuild": "node build/node-13-exports.js",
     "prebuild:themes": "sass src/theme/mermaid/index.scss dist/theme/mermaid.css",
@@ -121,7 +121,7 @@
     "test:jest": "jest --coverage --silent --ci --coverage --coverageReporters=\"text\" --coverageReporters=\"text-summary\"",
     "test:cypress": "cd tests && cypress run",
     "test:check-exports": "check-export-map",
-    "test:dev-server": "cd tests/dev-server && npm install && npm start",
+    "test:dev-server": "cd tests/dev-server && pnpm install && pnpm start",
     "test:e2e": "start-server-and-test test:dev-server http://localhost:8080 test:cypress",
     "test:watch": "jest --watch"
   },

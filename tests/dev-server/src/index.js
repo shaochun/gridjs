@@ -1,6 +1,6 @@
 import './style';
 import { Grid } from 'gridjs';
-import 'gridjs/dist/theme/mermaid.css';
+import 'gridjs/theme/mermaid.css';
 import { useEffect, useRef } from 'preact/hooks';
 
 export default function App() {
